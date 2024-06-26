@@ -22,15 +22,15 @@ class _TransactionFormState extends State<TransactionForm> {
     if (title.isEmpty || value <= 0) {
       return;
     }
-
     widget.onSubmit(title, value);
   }
 
   @override
   Widget build(BuildContext context) {
     return Card(
-        elevation: 5,
-        child: Column(children: <Widget>[
+      elevation: 5,
+      child: Column(
+        children: <Widget>[
           TextField(
             decoration: InputDecoration(labelText: 'Título da Despesa'),
             onSubmitted: (title) => _submitForm(),
@@ -48,6 +48,8 @@ class _TransactionFormState extends State<TransactionForm> {
               TextButton(child: Text("Nova transação"), onPressed: _submitForm),
             ],
           ),
-        ]));
+        ],
+      ),
+    );
   }
 }
